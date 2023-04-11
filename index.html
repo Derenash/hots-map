@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Map Demo</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+    #map {
+      width: 80%;
+      height: 100%;
+      float: left;
+      display: none;
+    }
+    #sidebar {
+    width: 20%;
+    height: 100%;
+    float: left;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+    display: none;
+  }
+    #heroes-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2px;
+    }
+    #main-screen {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    #maps-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .map-icon {
+      width: 15%;
+      cursor: pointer;
+      margin: 0,5%;
+      border: 5px solid black;
+      border-radius: 5px;
+    }
+    .hero-icon {
+      width: 20%;
+      cursor: pointer;
+      margin: 3px;
+      border: 3px solid #ff0000;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div id="main-screen">
+    <div id="maps-container">
+      <img src="icon/alterac-pass.jpg" class="map-icon" onclick="showMap('large/alterac-pass.jpg', 2800, 2322)" alt="Alterac Pass" />
+      <img src="icon/battlefield-of-eternity.jpg" class="map-icon" onclick="showMap('large/battlefield-of-eternity.jpg', 6865, 4018)" alt="Battlefield of Eternity" />
+      <img src="icon/blackhearts-bay.jpg" class="map-icon" onclick="showMap('large/blackhearts-bay.jpg', 6182, 4096)" alt="Blackheart's Bay" />
+      <img src="icon/braxis-holdout.jpg" class="map-icon" onclick="showMap('large/braxis-holdout.jpg', 5167, 3842)" alt="Braxis Holdout" />
+      <img src="icon/cursed-hollow.jpg" class="map-icon" onclick="showMap('large/cursed-hollow.jpg', 5442, 4078)" alt="Cursed Hollow" />
+      <img src="icon/dragon-shire.jpg" class="map-icon" onclick="showMap('large/dragon-shire.jpg', 5312, 3921)" alt="Dragon Shire" />
+      <img src="icon/garden-of-terror.jpg" class="map-icon" onclick="showMap('large/garden-of-terror.jpg', 6800, 4096)" alt="Garden of Terror" />
+      <img src="icon/hanamura-temple.jpg" class="map-icon" onclick="showMap('large/hanamura-temple.jpg', 5743, 4096)" alt="Hanamura Temple" />
+      <img src="icon/haunted-mines.jpg" class="map-icon" onclick="showMap('large/haunted-mines.jpg', 8192, 2838)" alt="Haunted Mines" />
+      <img src="icon/infernal-shrines.jpg" class="map-icon" onclick="showMap('large/infernal-shrines.jpg', 5570, 3849)" alt="Infernal Shrines" />
+      <img src="icon/sky-temple.jpg" class="map-icon" onclick="showMap('large/sky-temple.jpg', 5399, 4114)" alt="Sky Temple" />
+      <img src="icon/tomb-of-the-spider-queen.jpg" class="map-icon" onclick="showMap('large/tomb-of-the-spider-queen.jpg', 8192, 4096)" alt="Tomb of the Spider Queen" />
+      <img src="icon/towers-of-doom.jpg" class="map-icon" onclick="showMap('large/towers-of-doom.jpg', 5305, 3685)" alt="Towers of Doom" />
+      <img src="icon/volskaya-foundry.jpg" class="map-icon" onclick="showMap('large/volskaya-foundry.jpg', 5640, 3999)" alt="Volskaya Foundry" />
+      <img src="icon/warhead-junction.jpg" class="map-icon" onclick="showMap('large/warhead-junction.jpg', 4513, 4052)" alt="Warhead Junction" />    </div>
+  </div>
+  <div id="map"></div>
+  <div id="sidebar">
+    <input type="text" id="hero-search" placeholder="Search for a hero..." oninput="filterHeroes()" />
+    <div id="heroes-container"></div>
+  </div>  
+  <script src="heroes.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

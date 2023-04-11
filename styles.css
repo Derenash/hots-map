@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+.map-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.map-icon {
+  width: 500px;
+  height: 500px;
+  margin: 5px;
+  cursor: pointer;
+}
+.map-container {
+  position: relative;
+  flex-grow: 4;
+  height: 100%;
+  overflow: hidden;
+}
+.map {
+  position: absolute;
+  left: 0;
+  top: 0;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.reserved-area {
+  flex-grow: 1;
+  height: 100%;
+  background-color: #f0f0f0;
+}
