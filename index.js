@@ -88,7 +88,7 @@ function createHeroesIcons() {
   function filterHeroes() {
     const searchInput = document.getElementById('hero-search');
     const searchTerm = searchInput.value.toLowerCase();
-    const heroesIcons = document.querySelectorAll('#heroes-container .map-icon');
+    const heroesIcons = document.querySelectorAll('#heroes-container .hero-icon');
   
     heroesIcons.forEach((icon) => {
       const heroName = icon.getAttribute('data-hero-name');
